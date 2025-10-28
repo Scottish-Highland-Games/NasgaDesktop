@@ -7,31 +7,43 @@
         mc:Ignorable="d"
         Title="NASGA Desktop" Height="450" Width="800">
     <Grid>
-        <TabControl>
+        <TabControl Margin="-10,0,10,0" SelectionChanged="TabControl_SelectionChanged">
             <TabItem Header="Home">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
             <TabItem Header="Games">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="62*"/>
-                        <ColumnDefinition Width="335*"/>
+                        <ColumnDefinition Width="118*"/>
+                        <ColumnDefinition Width="91*"/>
+                        <ColumnDefinition Width="255*"/>
+                        <ColumnDefinition Width="330*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="Calendar" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click"/>
-                    <Button Content="Location" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_1"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="31,10,0,0" TextWrapping="Wrap" Text="Search by" VerticalAlignment="Top"/>
-                    <Button Content="Classes" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="33,128,0,0" TextWrapping="Wrap" Text="My Games" VerticalAlignment="Top"/>
-                    <Button Content="Edit" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_4"/>
-                    <Button Content="New" HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_3"/>
-                    <Button Content="All" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_5"/>
-                    <Button Content="Edit" HorizontalAlignment="Left" Margin="10,224,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_2"/>
+                    <Border BorderBrush="Black" BorderThickness="1"/>
+                    <Button Content="Calendar" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click" Height="20"/>
+                    <Button Content="Location" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_1" Height="20"/>
+                    <TextBlock Margin="31,10,0,0" TextWrapping="Wrap" Text="Search by" VerticalAlignment="Top" Height="16" Width="51" HorizontalAlignment="Left"/>
+                    <Button Content="Classes" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click" Height="20"/>
+                    <TextBlock HorizontalAlignment="Center" Margin="0,128,0,0" TextWrapping="Wrap" Text="My Games" VerticalAlignment="Top" Height="16" Width="56"/>
+                    <Button Content="Edit" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_4" Height="20"/>
+                    <Button Content="New" HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_3" Height="20"/>
+                    <Button Content="All" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_5" Height="20"/>
+                    <Button Content="Edit" HorizontalAlignment="Left" Margin="10,224,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_2" Height="20"/>
+                    <Button Content="Message Center" HorizontalAlignment="Left" Margin="10,289,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_2" Height="20"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,9,0,0" TextWrapping="Wrap" Text="Start date" VerticalAlignment="Top" Height="16" Width="52" Grid.Column="1"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="96,9,0,0" TextWrapping="Wrap" Text="End date" VerticalAlignment="Top" Height="16" Width="52" Grid.Column="2"/>
+                    <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="67,5,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+                    <DatePicker Grid.Column="2" HorizontalAlignment="Left" Margin="153,5,0,0" VerticalAlignment="Top"/>
+                    <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.ColumnSpan="3" Margin="0,184,0,0">
+                        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,54,0,0"/>
+                    </Border>
+                    <StackPanel/>
                 </Grid>
             </TabItem>
             <TabItem HorizontalAlignment="Center" Height="20" Header="Athletes" VerticalAlignment="Center" Width="54">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
-            <TabItem HorizontalAlignment="Center" Height="20" Header="Settings" VerticalAlignment="Center" Width="54">
+            <TabItem Height="20" Header="Settings" VerticalAlignment="Top" Margin="0,-1,0,0">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="21*"/>
@@ -40,6 +52,9 @@
                     </Grid.ColumnDefinitions>
                 </Grid>
             </TabItem>
+            <Border BorderBrush="Black" BorderThickness="1" Height="118" Width="93">
+                <Border/>
+            </Border>
         </TabControl>
     </Grid>
 </Window>
