@@ -7,48 +7,63 @@
         mc:Ignorable="d"
         Title="NASGA Desktop" Height="450" Width="800">
     <Grid>
-        <TabControl Margin="-10,0,10,0" SelectionChanged="TabControl_SelectionChanged">
-            <TabItem Header="Home">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem Header="Games">
-                <Grid Background="#FFE5E5E5">
+        <Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
+        <TabControl SelectionChanged="TabControl_SelectionChanged" Grid.ColumnSpan="2">
+            <TabItem Header="Home" BorderBrush="#FF6699CC">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF0F0F0"/>
+                        <GradientStop Color="#FF6699CC" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="#cccc99">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="118*"/>
-                        <ColumnDefinition Width="91*"/>
-                        <ColumnDefinition Width="255*"/>
-                        <ColumnDefinition Width="330*"/>
+                        <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Border BorderBrush="Black" BorderThickness="1"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Games" Height="20" VerticalAlignment="Center" HorizontalAlignment="Left" Width="48">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF0F0F0"/>
+                        <GradientStop Color="#FF6699CC" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="#cccc99">
                     <Button Content="Calendar" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click" Height="20"/>
                     <Button Content="Location" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_1" Height="20"/>
-                    <TextBlock Margin="31,10,0,0" TextWrapping="Wrap" Text="Search by" VerticalAlignment="Top" Height="16" Width="51" HorizontalAlignment="Left"/>
+                    <TextBlock Margin="10,10,0,0" TextWrapping="Wrap" Text="Search by" VerticalAlignment="Top" Height="16" Width="93" HorizontalAlignment="Left" TextAlignment="Center"/>
                     <Button Content="Classes" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click" Height="20"/>
-                    <TextBlock HorizontalAlignment="Center" Margin="0,128,0,0" TextWrapping="Wrap" Text="My Games" VerticalAlignment="Top" Height="16" Width="56"/>
-                    <Button Content="Edit" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_4" Height="20"/>
-                    <Button Content="New" HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_3" Height="20"/>
-                    <Button Content="All" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_5" Height="20"/>
-                    <Button Content="Edit" HorizontalAlignment="Left" Margin="10,224,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_2" Height="20"/>
-                    <Button Content="Message Center" HorizontalAlignment="Left" Margin="10,289,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_2" Height="20"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="10,9,0,0" TextWrapping="Wrap" Text="Start date" VerticalAlignment="Top" Height="16" Width="52" Grid.Column="1"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="96,9,0,0" TextWrapping="Wrap" Text="End date" VerticalAlignment="Top" Height="16" Width="52" Grid.Column="2"/>
-                    <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="67,5,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" />
-                    <DatePicker Grid.Column="2" HorizontalAlignment="Left" Margin="153,5,0,0" VerticalAlignment="Top"/>
-                    <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.ColumnSpan="3" Margin="0,184,0,0">
-                        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,54,0,0"/>
-                    </Border>
+                    <Button Content="Save Local" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_7" Height="20"/>
+                    <Button Content="My Games" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_5" Height="20"/>
                     <StackPanel/>
+                    <Button Content="Sync to&#xD;&#xA;offline DB" HorizontalAlignment="Left" Margin="10,199,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_4" Height="41" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" UseLayoutRounding="False" />
+                    <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="122,0,0,0" x:Name="GamesDataGrid" />
+                    <Button Content="Sync to&#xA;CLOUD DB" HorizontalAlignment="Left" Margin="10,245,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click_6" Height="41" />
                 </Grid>
             </TabItem>
             <TabItem HorizontalAlignment="Center" Height="20" Header="Athletes" VerticalAlignment="Center" Width="54">
-                <Grid Background="#FFE5E5E5"/>
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF0F0F0"/>
+                        <GradientStop Color="#FF6699CC" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="#cccc99"/>
             </TabItem>
             <TabItem Height="20" Header="Settings" VerticalAlignment="Top" Margin="0,-1,0,0">
-                <Grid Background="#FFE5E5E5">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF0F0F0"/>
+                        <GradientStop Color="#FF6699CC" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="#cccc99">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="21*"/>
-                        <ColumnDefinition Width="227*"/>
-                        <ColumnDefinition Width="546*"/>
+                        <ColumnDefinition Width="0*"/>
+                        <ColumnDefinition Width="58*"/>
+                        <ColumnDefinition Width="339*"/>
                     </Grid.ColumnDefinitions>
                 </Grid>
             </TabItem>
