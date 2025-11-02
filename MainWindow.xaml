@@ -21,6 +21,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding HomeTabMessage}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="24" Width="195" Margin="10,10,0,0"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Games" Height="20" VerticalAlignment="Center" HorizontalAlignment="Left" Width="48">
@@ -52,7 +53,7 @@
                 </TabItem.Background>
                 <Grid Background="#cccc99"/>
             </TabItem>
-            <TabItem Height="20" Header="Settings" VerticalAlignment="Top" Margin="0,-1,0,0">
+            <TabItem Height="20" Header="Settings" VerticalAlignment="Top" Margin="0,0,0,0">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1">
                         <GradientStop Color="#FFF0F0F0"/>
